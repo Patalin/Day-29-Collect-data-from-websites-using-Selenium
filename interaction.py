@@ -6,7 +6,12 @@ chrorme_driver_path = Service('/Users/macbookpro/Desktop/chromedriver')
 driver = webdriver.Chrome(service=chrorme_driver_path)
 driver.get('https://en.wikipedia.org/wiki/Main_Page')
 
-no_of_articles = driver.find_element(By.XPATH, '//*[@id="articlecount"]/a[1]')
+# Use this
+# no_of_articles = driver.find_element(By.XPATH, '//*[@id="articlecount"]/a[1]')
+
+# Or use this
+
+no_of_articles = driver.find_element(By.CSS_SELECTOR, '#articlecount a')
 
 print(no_of_articles.text)
 
